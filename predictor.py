@@ -90,7 +90,7 @@ if st.button("Predict"):
     
     explainer_shap = shap.TreeExplainer(model)    
     
-    shap_values = explainer.shap_values(pd.DataFrame([feature_values], columns=feature_names))
+    shap_values = explainer_shap.shap_values(pd.DataFrame([feature_values], columns=feature_names))
 
     if predicted_class == 1:
         shap.force_plot(explainer_shap.expected_value[1], shap_values[:,:,1], pd.DataFrame([feature_values], columns=feature_names), matplotlib=True)    
