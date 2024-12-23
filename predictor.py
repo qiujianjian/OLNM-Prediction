@@ -36,7 +36,7 @@ TT = st.number_input("Tumor Tickness (mm):", min_value=0.01, max_value=20.0, val
 TB = st.number_input("Tumor Budding:", min_value=0, max_value=36, value=16)
 
 # BASO: numerical input
-BASO = st.number_input("BASO:", min_value=0, max_value=1.5, value=0.8)
+BASO = st.number_input("BASO:", min_value=0.0, max_value=1.5, value=0.8)
 
 # NLR: numerical input
 NLR = st.number_input("Neutrophil-to-Lymphocyte Ratio:", min_value=0.00, max_value=6.00, value=3.20)
