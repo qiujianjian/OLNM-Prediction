@@ -24,7 +24,7 @@ feature_names = [
 st.title("OLNM Predictor")
 
 # Size: numerical input
-Size = st.number_input("Tumor Size (mm):", min_value=1, max_value=40, value=30)
+Size = st.number_input("Tumor Size (mm):", min_value=1, max_value=40, value=26)
 
 # DOI: numerical input
 DOI = st.number_input("DOI (mm):", min_value=0.1, max_value=10.2, value=8.5)
@@ -39,7 +39,7 @@ TB = st.number_input("Tumor Budding:", min_value=0, max_value=36, value=18)
 BASO = st.number_input("BASO (%):", min_value=0.0, max_value=1.5, value=0.3)
 
 # NLR: numerical input
-NLR = st.number_input("Neutrophil-to-Lymphocyte Ratio:", min_value=0.00, max_value=6.00, value=2.10)
+NLR = st.number_input("Neutrophil-to-Lymphocyte Ratio:", min_value=0.00, max_value=6.00, value=2.24)
 
 # Grade: categorical selection
 Grade = st.selectbox("Tumor Grade:", options=list(Grade_options.keys()), format_func=lambda x: Grade_options[x])
