@@ -35,7 +35,7 @@ TT = st.number_input("Tumor Tickness (mm):", min_value=0.01, max_value=20.0, val
 # TB: numerical input
 TB = st.number_input("Tumor Budding:", min_value=0, max_value=36, value=16)
 
-# BASO%: numerical input
+# BASO: numerical input
 BASO = st.number_input("BASO:", min_value=0, max_value=1.5, value=0.8)
 
 # NLR: numerical input
