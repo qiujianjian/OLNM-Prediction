@@ -88,8 +88,6 @@ if st.button("Predict"):
 
 # Calculate SHAP values and display force plot    
     
-    st.subheader("SHAP Force Plot Explanation is {probability:.1f}%.")
-    
     explainer_shap = shap.TreeExplainer(model)    
     
     shap_values = explainer_shap.shap_values(pd.DataFrame([feature_values], columns=feature_names))
