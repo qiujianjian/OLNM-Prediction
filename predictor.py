@@ -86,7 +86,9 @@ if st.button("Predict"):
     # Display advice
     st.write(advice)
 
-# Calculate SHAP values and display force plot    
+# Calculate SHAP values and display force plot 
+    
+    st.subheader("SHAP Force Plot Explanation")
     
     explainer_shap = shap.TreeExplainer(model)    
     
