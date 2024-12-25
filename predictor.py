@@ -55,20 +55,12 @@ feature_values = [Size, DOI, TT, TB, BASO, NLR, Grade, PNI, LVI]
 features = np.array([feature_values])
 
 if st.button("Predict"):
-    # Predict class and probabilities
-    predicted_class = model.predict(features)[0]  # Ensure this is an integer value (e.g., 0 or 1)
-    predicted_proba = model.predict_proba(features)[0]  # Array of probabilities
-
-    # Display prediction results
-    st.write(f"**Predicted Class:** {predicted_class} (1: With OLNM,0: Without OLNM)")
-    st.write(f"**Prediction Probabilities:** {predicted_proba}")
-
     # Calculate the probability of the predicted class
     probability = predicted_proba[predicted_class] * 100
 
     if predicted_class == 1:
         advice = (
-            f"**According to our model, you have a high risk of occult lymph node metastasis. "
+            f"**According to our model, you have a high risk of OLNM. "
             f"The model predicts that your probability of having occult lymph node metastasis is {probability:.1f}%. "
             "While this is just an estimate, it suggests that you may be at significant risk. "
             "I recommend that you receive neck dissection, this procedure is intended to remove any potentially affected lymph nodes in the neck region, "
@@ -76,11 +68,11 @@ if st.button("Predict"):
         )
     else:
         advice = (
-            f"According to our model, you have a low risk of occult lymph node metastasis. "
+            f"**According to our model, you have a low risk of occult lymph node metastasis. "
             f"The model predicts that your probability of not having occult lymph node metastasis is {probability:.1f}%. "
             "However, maintain a healthy lifestyle is still very important. "
             "I recommend regular check-ups to monitor your health, "
-            "and to seek medical advice promptly if you experience any symptoms."
+            "and to seek medical advice promptly if you experience any symptoms.**"
         )
 
     # Display advice
