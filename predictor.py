@@ -77,6 +77,7 @@ if st.button("Predict"):
         )
 
     # Display advice
+    st.markdown(advice, unsafe_allow_html=True)
     
 # Calculate SHAP values and display force plot    
     
