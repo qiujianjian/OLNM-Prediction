@@ -65,7 +65,7 @@ if st.button("Predict"):
 
     if predicted_class == 1:
         advice = (f"""
-                  <div style="text-align: center; font-style: italic; font-weight: bold; font-size: 15px; font-family: 'Times New Roman', Times, serif;">
+                  <div style="text-align: center; font-style: italic; font-weight: bold; font-size: 18px; font-family: 'Times New Roman', Times, serif;">
                   Based on feature values, predicted probability of OLNM is {probability:.1f}%。
                   </div>
                  """
