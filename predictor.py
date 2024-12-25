@@ -65,7 +65,9 @@ if st.button("Predict"):
 
     if predicted_class == 1:
         advice = (
-            f"**Based on feature values, predicted probability of OLNM is {probability:.1f}%.** "
+            f"<div style='text-align: center; font-style: italic; font-weight: bold; font-size: 15px;'>"
+            f"Based on feature values, predicted probability of OLNM is {probability:.1f}%."
+            f"</div>"
         )
     else:
         advice = (
@@ -80,8 +82,6 @@ if st.button("Predict"):
     st.write(advice)
 
 # Calculate SHAP values and display force plot 
-    
-    st.subheader("SHAP Force Plot Explanation")
     
     explainer_shap = shap.TreeExplainer(model)    
     
