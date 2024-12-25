@@ -65,7 +65,7 @@ if st.button("Predict"):
 
     if predicted_class == 1:
         advice = (
-            f"**Based on feature values, predicted probability ofOLNM is {probability:.1f}%. "
+            f"**Based on feature values, predicted probability of OLNM is {probability:.1f}%.** "
         )
     else:
         advice = (
