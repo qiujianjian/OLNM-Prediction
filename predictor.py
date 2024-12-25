@@ -88,8 +88,8 @@ shap_values = explainer_shap.shap_values(pd.DataFrame([feature_values], columns=
 
 def custom_formatter(x):
     return f"{x:.3f}"
-    
-if predicted_class == 1:
+ 
+   if predicted_class == 1:
         shap.force_plot(
         explainer_shap.expected_value[1], 
         shap_values[:,:,1], 
@@ -99,7 +99,7 @@ if predicted_class == 1:
         link='identity',
         feature_names=[f"{name} ({custom_formatter(value)})" for name, value in zip(feature_names, feature_values)]
     )
-else:
+  else:
     shap.force_plot(
         explainer_shap.expected_value[0], 
         shap_values[:,:,0], 
