@@ -20,9 +20,6 @@ feature_names = [
     "NLR", "Grade", "PNI", "LVI"
 ]
 
-# Streamlit user interface
-st.title("OLNM Predictor")
-
 # Size: numerical input
 Size = st.number_input("Tumor size (Size, mm):", min_value=1, max_value=40, value=26)
 
