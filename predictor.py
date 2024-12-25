@@ -66,7 +66,7 @@ if st.button("Predict"):
     if predicted_class == 1:
         advice = (f"""
                   <div style="text-align: center; font-style: italic; font-weight: bold; font-size: 15px; font-family: 'Times New Roman', Times, serif;">
-                  基于特征值，预测的隐匿性淋巴结转移的概率是 {probability:.1f}%。
+                  Based on feature values, predicted probability of OLNM is {probability:.1f}%。
                   </div>
                  """
         )
