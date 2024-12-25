@@ -60,7 +60,7 @@ if st.button("Predict"):
     predicted_proba = model.predict_proba(features)[0]  # Array of probabilities
 
     # Display prediction results
-    st.write(f"**Predicted Class:** {predicted_class} (0: Without OLNM, 1: With OLNM) ")
+    st.write(f"**Predicted Class:** {predicted_class} (1: With OLNM,0: Without OLNM)")
     st.write(f"**Prediction Probabilities:** {predicted_proba}")
 
     # Calculate the probability of the predicted class
