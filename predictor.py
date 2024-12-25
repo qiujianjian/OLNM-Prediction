@@ -24,31 +24,31 @@ feature_names = [
 st.title("OLNM Predictor")
 
 # Size: numerical input
-Size = st.number_input("Tumor Size (mm):", min_value=1, max_value=40, value=26)
+Size = st.number_input("Tumor Size (Size, mm):", min_value=1, max_value=40, value=26)
 
 # DOI: numerical input
-DOI = st.number_input("DOI (mm):", min_value=0.1, max_value=10.2, value=8.5)
+DOI = st.number_input("Depth of invasion (DOI, mm):", min_value=0.1, max_value=10.2, value=8.5)
 
 # TT: numerical input
-TT = st.number_input("Tumor Tickness (mm):", min_value=0.01, max_value=20.0, value=10.6)
+TT = st.number_input("Tumor Tickness (TT, mm):", min_value=0.01, max_value=20.0, value=10.6)
 
 # TB: numerical input
-TB = st.number_input("Tumor Budding:", min_value=0, max_value=36, value=18)
+TB = st.number_input("Tumor Budding (TB):", min_value=0, max_value=36, value=18)
 
 # BASO: numerical input
-BASO = st.number_input("BASO (%):", min_value=0.0, max_value=1.5, value=0.3)
+BASO = st.number_input("Basophil (BASO, %):", min_value=0.0, max_value=1.5, value=0.3)
 
 # NLR: numerical input
-NLR = st.number_input("Neutrophil-to-Lymphocyte Ratio:", min_value=0.00, max_value=6.00, value=2.24)
+NLR = st.number_input("Neutrophil-to-Lymphocyte Ratio (NLR):", min_value=0.00, max_value=6.00, value=2.24)
 
 # Grade: categorical selection
-Grade = st.selectbox("Tumor Grade:", options=list(Grade_options.keys()), format_func=lambda x: Grade_options[x])
+Grade = st.selectbox("Tumor Grade (Grade):", options=list(Grade_options.keys()), format_func=lambda x: Grade_options[x])
 
 # PNI: categorical selection
-PNI = st.selectbox("PNI:", options=[0, 1], format_func=lambda x: 'No (0)' if x == 0 else 'Yes (1)')
+PNI = st.selectbox("Perineural invasion (PNI):", options=[0, 1], format_func=lambda x: 'No (0)' if x == 0 else 'Yes (1)')
 
 # LVI: categorical selection
-LVI = st.selectbox("LVI:", options=[0, 1], format_func=lambda x: 'No (0)' if x == 0 else 'Yes (1)')
+LVI = st.selectbox("lymphovascular invasion (LVI):", options=[0, 1], format_func=lambda x: 'No (0)' if x == 0 else 'Yes (1)')
 
 # Process inputs and make predictions
 feature_values = [Size, DOI, TT, TB, BASO, NLR, Grade, PNI, LVI]
