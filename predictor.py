@@ -68,11 +68,11 @@ if st.button("Predict"):
 
     if predicted_class == 1:
         advice = (
-            f"According to our model, you have a high risk of occult lymph node metastasis. "
+            f"**According to our model, you have a high risk of occult lymph node metastasis. "
             f"The model predicts that your probability of having occult lymph node metastasis is {probability:.1f}%. "
             "While this is just an estimate, it suggests that you may be at significant risk. "
             "I recommend that you receive neck dissection, this procedure is intended to remove any potentially affected lymph nodes in the neck region, "
-            "which may help prevent the spread of cancer and improve your overall prognosis."
+            "which may help prevent the spread of cancer and improve your overall prognosis.**"
         )
     else:
         advice = (
