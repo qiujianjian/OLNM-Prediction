@@ -65,18 +65,18 @@ if st.button("Predict"):
 
     if predicted_class == 1:
         advice = (f"""
-                  <div style="text-align: center; font-style: italic; font-weight: bold; font-size: 27px; font-family: 'Times New Roman', Times, serif;">
-                  Based on feature values, predicted probability of OLNM is {probability:.1f}%。
+                  <div style="text-align: center; font-style: italic; font-weight: bold; font-size: 24px; font-family: 'Times New Roman', Times, serif;">
+                  Based on feature values, predicted probability of with OLNM is {probability:.1f}%
                   </div>
                  """
         )
     else:
         advice = (
-            f"**According to our model, you have a low risk of occult lymph node metastasis. "
-            f"The model predicts that your probability of not having occult lymph node metastasis is {probability:.1f}%. "
-            "However, maintain a healthy lifestyle is still very important. "
-            "I recommend regular check-ups to monitor your health, "
-            "and to seek medical advice promptly if you experience any symptoms.**"
+            f"""
+                  <div style="text-align: center; font-style: italic; font-weight: bold; font-size: 24px; font-family: 'Times New Roman', Times, serif;">
+                  Based on feature values, predicted probability of without OLNM is {probability:.1f}%
+                  </div>
+                 """
         )
 
     # Display advice
