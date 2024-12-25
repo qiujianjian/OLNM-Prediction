@@ -55,6 +55,11 @@ feature_values = [Size, DOI, TT, TB, BASO, NLR, Grade, PNI, LVI]
 features = np.array([feature_values])
 
 if st.button("Predict"):
+
+    # Predict class and probabilities    
+    predicted_class = model.predict(features)[0]    
+    predicted_proba = model.predict_proba(features)[0]
+    
     # Calculate the probability of the predicted class
     probability = predicted_proba[predicted_class] * 100
 
