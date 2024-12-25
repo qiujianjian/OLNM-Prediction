@@ -64,8 +64,11 @@ if st.button("Predict"):
     probability = predicted_proba[predicted_class] * 100
 
     if predicted_class == 1:
-        advice = (
-            f"# ***Based on feature values, predicted probability of OLNM is {probability:.1f}%.***"
+        advice = (f"""
+                  <div style="text-align: center; font-style: italic; font-weight: bold; font-size: 15px; font-family: 'Times New Roman', Times, serif;">
+                  基于特征值，预测的隐匿性淋巴结转移的概率是 {probability:.1f}%。
+                  </div>
+                 """
         )
     else:
         advice = (
@@ -77,7 +80,8 @@ if st.button("Predict"):
         )
 
     # Display advice
-    st.write(advice)
+    
+    st.markdown(advice, unsafe_allow_html=True)
 
 # Calculate SHAP values and display force plot 
     
