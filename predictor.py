@@ -65,9 +65,7 @@ if st.button("Predict"):
 
     if predicted_class == 1:
         advice = (
-            f"<div style='text-align: center; font-style: italic; font-weight: bold; font-size: 15px;'>"
-            f"Based on feature values, predicted probability of OLNM is {probability:.1f}%."
-            f"</div>"
+            f"# ***Based on feature values, predicted probability of OLNM is {probability:.1f}%.***"
         )
     else:
         advice = (
