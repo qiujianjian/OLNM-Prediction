@@ -65,7 +65,7 @@ if st.button("Predict"):
 
     if predicted_class == 1:
         advice = (f"""
-                  <div style="text-align: center; font-style: italic; font-weight: bold; font-size: 24px; font-family: 'Times New Roman', Times, serif;">
+                  <div style="text-align: center; font-style: italic; font-weight: bold; font-size: 21px; font-family: 'Times New Roman', Times, serif;">
                   Based on feature values, predicted probability of with OLNM is {probability:.1f}%
                   </div>
                  """
@@ -73,7 +73,7 @@ if st.button("Predict"):
     else:
         advice = (
             f"""
-                  <div style="text-align: center; font-style: italic; font-weight: bold; font-size: 24px; font-family: 'Times New Roman', Times, serif;">
+                  <div style="text-align: center; font-style: italic; font-weight: bold; font-size: 21px; font-family: 'Times New Roman', Times, serif;">
                   Based on feature values, predicted probability of without OLNM is {probability:.1f}%
                   </div>
                  """
