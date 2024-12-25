@@ -80,16 +80,17 @@ if st.button("Predict"):
     
     st.markdown(advice, unsafe_allow_html=True)
 
-# Calculate SHAP values and display force plot 
+    # Calculate SHAP values and display force plot 
 
-explainer_shap = shap.TreeExplainer(model) 
+    explainer_shap = shap.TreeExplainer(model) 
     
-shap_values = explainer_shap.shap_values(pd.DataFrame([feature_values], columns=feature_names))
+    shap_values = explainer_shap.shap_values(pd.DataFrame([feature_values], columns=feature_names))
+    
+        if predicted_class == 1:
+            shap.force_plot(explainer_shap.expected_value[1], shap_values[:,:,1], pd.DataFrame([feature_values], columns=feature_names), matplotlib=True)    
+        else:        
+           shap.force_plot(explainer_shap.expected_value[0], shap_values[:,:,0], pd.DataFrame([feature_values], columns=feature_names), matplotlib=True)    
 
-    if predicted_class == 1:
-        shap.force_plot(explainer_shap.expected_value[1], shap_values[:,:,1], pd.DataFrame([feature_values], columns=feature_names), matplotlib=True)    
-    else:        
-        shap.force_plot(explainer_shap.expected_value[0], shap_values[:,:,0], pd.DataFrame([feature_values], columns=feature_names), matplotlib=True)    
-
-    plt.savefig("shap_force_plot.png", bbox_inches='tight', dpi=1200)        
-    st.image("shap_force_plot.png", caption='')
+plt.savefig("shap_force_plot.png", bbox_inches='tight', dpi=1200)        
+   
+st.image("shap_force_plot.png", caption='')
