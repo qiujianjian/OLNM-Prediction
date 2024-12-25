@@ -82,37 +82,14 @@ if st.button("Predict"):
 
 # Calculate SHAP values and display force plot 
 
-explainer_shap = shap.TreeExplainer(model)
-
+explainer_shap = shap.TreeExplainer(model) 
+    
 shap_values = explainer_shap.shap_values(pd.DataFrame([feature_values], columns=feature_names))
 
-def custom_formatter(x):
-    return f"{x:.3f}"
-
-if predicted_class == 1:
-    shap.force_plot(
-        explainer_shap.expected_value[1],
-        shap_values[:, :, 1],
-        pd.DataFrame([feature_values], columns=feature_names),
-        matplotlib=True,
-        show=True,
-        link='identity',
-        feature_names=[
-            f"{name} ({custom_formatter(value)})" for name, value in zip(feature_names, feature_values)
-        ]
-    )
-else:
-    shap.force_plot(
-        explainer_shap.expected_value[0],
-        shap_values[:, :, 0],
-        pd.DataFrame([feature_values], columns=feature_names),
-        matplotlib=True,
-        show=True,
-        link='identity',
-        feature_names=[
-            f"{name} ({custom_formatter(value)})" for name, value in zip(feature_names, feature_values)
-        ]
-    )
+    if predicted_class == 1:
+        shap.force_plot(explainer_shap.expected_value[1], shap_values[:,:,1], pd.DataFrame([feature_values], columns=feature_names), matplotlib=True)    
+    else:        
+        shap.force_plot(explainer_shap.expected_value[0], shap_values[:,:,0], pd.DataFrame([feature_values], columns=feature_names), matplotlib=True)    
 
     plt.savefig("shap_force_plot.png", bbox_inches='tight', dpi=1200)        
     st.image("shap_force_plot.png", caption='')
