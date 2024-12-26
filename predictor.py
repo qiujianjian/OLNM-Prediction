@@ -30,7 +30,7 @@ DOI = st.number_input("Depth of invasion (DOI, mm):", min_value=0.1, max_value=1
 TT = st.number_input("Tumor Thickness (TT, mm):", min_value=0.01, max_value=20.0, value=10.6)
 
 # TB: numerical input
-TB = st.number_input("Tumor Budding (TB):", min_value=0, max_value=36, value=18)
+TB = st.number_input("Tumor Budding (TB, score):", min_value=0, max_value=36, value=18)
 
 # BASO: numerical input
 BASO = st.number_input("Basophil percentage(BASO, %):", min_value=0.0, max_value=1.5, value=0.3)
@@ -63,7 +63,7 @@ if st.button("Predict"):
     if predicted_class == 1:
         advice = (f"""
                   <div style="text-align: center; font-style: italic; font-weight: bold; font-size: 21px; font-family: 'Times New Roman', Times, serif;">
-                  Based on feature values, predicted probability of with OLNM is {probability:.1f}%
+                  Based on feature values, predicted possibility of OLNM is {probability:.1f}%
                   </div>
                  """
         )
@@ -71,7 +71,7 @@ if st.button("Predict"):
         advice = (
             f"""
                   <div style="text-align: center; font-style: italic; font-weight: bold; font-size: 21px; font-family: 'Times New Roman', Times, serif;">
-                  Based on feature values, predicted probability of without OLNM is {probability:.1f}%
+                  Based on feature values, predicted possibility of not OLNM is {probability:.1f}%
                   </div>
                  """
         )
